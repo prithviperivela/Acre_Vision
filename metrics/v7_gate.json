@@ -1,0 +1,16 @@
+{
+  "threshold": 0.2554,
+  "batch1_precision": 73.17073170731707,
+  "batch1_recall": 96.7741935483871,
+  "batch1_f1": 83.33333333333333,
+  "window_px": 5,
+  "minor_classes": [
+    "footway",
+    "living_street",
+    "path",
+    "residential",
+    "service",
+    "track",
+    "unclassified"
+  ]
+}

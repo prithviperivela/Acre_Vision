@@ -1,0 +1,7 @@
+A  OSM-labelled 40%: n= 76  model accuracy  69.7%
+B  unlabelled  60%: n= 84  model accuracy  92.9%
+
+CITY-WEIGHTED MODEL ACCURACY = 0.40*69.7 + 0.60*92.9 = 83.6%
+(B is over-sampled from land v8 newly claims, so this is optimistic for B;
+ batch2 unlabelled alone, n=24, is the unbiased draw.)
+ unbiased B estimate (n=24): 95.8%  -> city-weighted 85.4%

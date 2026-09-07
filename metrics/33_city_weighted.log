@@ -1,0 +1,10 @@
+city strata:  A = OSM-labelled 12030 (40%)   B = unlabelled 17921 (60%)
+clean samples: A n=76   B n=24
+
+ver     acc on A   acc on B  CITY-WEIGHTED
+v4         50.0%       4.2%          22.6%
+v6         65.8%       8.3%          31.4%
+v8         65.8%      91.7%          81.3%
+
+B is sampled n=24 so its CI is wide (+-20pt); treat the city number as indicative.
+A-sample is batch 2 only, which no rule was tuned on.

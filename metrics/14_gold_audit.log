@@ -1,0 +1,23 @@
+96 chips, 94 scorable (2 Mixed excluded)
+
+=== PER-STRATUM AGREEMENT WITH GOLD ===
+stratum          n   v4 agrees   v5 agrees   gold breakdown
+interstitial    46       23.9%       67.4%   Vacant=31, Urban=12, Other=3
+vacant_tag      16       31.2%       31.2%   Other=11, Vacant=5
+urban           16       93.8%       93.8%   Urban=15, Vacant=1
+water            8      100.0%      100.0%   Water=8
+other            8       25.0%       25.0%   Urban=3, Vacant=3, Other=2
+
+=== THE DECISIVE NUMBER: precision of each Vacant rule ===
+  v4  landuse-tag Vacant                   n= 17  precision= 35.3%   errors: {'Other': 11}
+  v5  Vacant (all)                         n= 62  precision= 58.1%   errors: {'Other': 14, 'Urban': 12}
+  v5  Vacant from NEW interstitial only    n= 46  precision= 67.4%   errors: {'Urban': 12, 'Other': 3}
+
+=== confusion: gold (rows) vs v5 OSM label (cols) ===
+             Vacant    Urban    Water    Other
+Vacant           36        1        0        3
+Urban            12       15        0        3
+Water             0        0        8        0
+Other            14        0        0        2
+
+wrote /home/prithvi/AcreVision_v2/outputs/gold/audit_rows.json

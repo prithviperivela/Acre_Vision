@@ -1,0 +1,13 @@
+=== gold verdict on chips dominated by each VACANT-set fclass ===
+fclass           n_gold_chips   gold breakdown
+farmland                    4   {'Vacant': 3, 'Other': 1}  -> 75% truly Vacant
+scrub                      12   {'Other': 10, 'Vacant': 2}  -> 17% truly Vacant
+
+--- for reference, the OTHER-set tags ---
+forest                     10   {'Other': 7, 'Vacant': 3}
+nature_reserve              8   {'Other': 8}
+military                    5   {'Urban': 3, 'Vacant': 1, 'Other': 1}
+
+=== simulated fix: move scrub from VACANT to OTHER ===
+  v4 VACANT set (with scrub)   n= 16  precision= 31.2%  {'Other': 11, 'Vacant': 5}
+  VACANT minus scrub           n=  4  precision= 75.0%  {'Vacant': 3, 'Other': 1}

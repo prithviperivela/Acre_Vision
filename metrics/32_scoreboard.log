@@ -1,0 +1,40 @@
+
+=== batch1  (n=94) ===
+ver   coverage  Vac prec  Vac rec  Vac F1  accuracy
+v4         89%     35.3%    15.0%   21.1     43.6%
+v5        100%     58.1%    90.0%   70.6     64.9%
+v6        100%     68.0%    85.0%   75.6     73.4%
+v7        100%     68.8%    82.5%   75.0     73.4%
+v8        100%     68.0%    85.0%   75.6     73.4%
+
+=== batch2  (n=100) ===
+ver   coverage  Vac prec  Vac rec  Vac F1  accuracy
+v4         74%     50.0%    13.5%   21.2     39.0%
+v5         80%     52.7%    55.8%   54.2     50.0%
+v6         80%     55.6%    48.1%   51.5     52.0%
+v7         80%     54.8%    44.2%   48.9     51.0%
+v8        100%     67.6%    88.5%   76.7     72.0%
+
+=== batch3  (n=60) ===
+ver   coverage  Vac prec  Vac rec  Vac F1  accuracy
+v4         10%    100.0%     1.9%    3.6      1.7%
+v5         12%    100.0%     3.7%    7.1      3.3%
+v6         12%    100.0%     3.7%    7.1      3.3%
+v7         12%    100.0%     3.7%    7.1      3.3%
+v8        100%     90.0%   100.0%   94.7     90.0%
+
+=== ALL THREE BATCHES POOLED  (n=254) ===
+ver   coverage  Vac prec  Vac rec  Vac F1  accuracy
+v4         65%     43.8%     9.6%   15.7     31.9%
+v5         71%     56.3%    45.9%   50.6     44.5%
+v6         71%     62.9%    41.8%   50.2     48.4%
+v7         71%     63.0%    39.7%   48.7     48.0%
+v8        100%     75.3%    91.8%   82.7     76.8%
+
+"coverage" = share of parcels the rule labels at all. A rule that says
+nothing about a parcel cannot be right about it, and 60% of the city was
+uncovered until v8.
+
+Batch 1 is optimistic for v6 (it chose the scrub fix) and for v7 (it fitted
+the gate). Batch 2 and 3 are clean tests. v7 does not survive batch 2 and is
+rejected; v8 is confirmed by batch 3 at 90% precision on new ground.

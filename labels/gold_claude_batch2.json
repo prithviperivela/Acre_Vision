@@ -1,0 +1,20 @@
+{
+"_note": "BATCH 2. Chip-level majority class from Esri World Imagery z18 (~0.57 m/px), BLIND to the OSM mask and shuffled (scripts/25). Annotator: Claude (model). Same rule as batch 1: Urban if built structures+curtilage >=50% of the 320 m chip; Water if open water dominant; Other if dense tree/forest/park/quarry/infrastructure dominant; Vacant if open developable land dominant. Zero overlap with batch 1. Includes an 'unlabelled' stratum (parcels OSM does not label at all), which batch 1 lacked. This batch was NOT used to fit the v7 road gate, so it is the honest test of it.",
+"443":"Vacant","15768":"Vacant","13264":"Other","10551":"Vacant","14083":"Vacant","21101":"Urban",
+"10215":"Urban","26589":"Other","29043":"Vacant","8771":"Urban","30476":"Water","19929":"Vacant",
+"8991":"Vacant","24606":"Urban","13004":"Water","26322":"Urban","20230":"Vacant","8372":"Vacant",
+"27439":"Vacant","16932":"Urban","13491":"Other","16853":"Urban","19251":"Vacant","22074":"Vacant",
+"15293":"Vacant","18151":"Other","17894":"Other","18904":"Vacant","8562":"Water","12397":"Vacant",
+"8690":"Vacant","17565":"Vacant","24386":"Other","9480":"Vacant","16322":"Other","1160":"Vacant",
+"12430":"Other","162":"Vacant","29065":"Other","18369":"Urban","9572":"Vacant","10832":"Vacant",
+"12610":"Vacant","12276":"Vacant","29073":"Other","11260":"Vacant","5427":"Vacant","19395":"Vacant",
+"23012":"Water","4413":"Urban","11089":"Water","28472":"Vacant","27068":"Urban","15027":"Vacant",
+"21221":"Urban","8694":"Vacant","26767":"Water","12022":"Water","27811":"Vacant","24545":"Urban",
+"14181":"Urban","3891":"Vacant","17410":"Vacant","7479":"Vacant","13562":"Other","19490":"Urban",
+"25097":"Other","12980":"Vacant","15740":"Water","16863":"Vacant","16230":"Vacant","21981":"Other",
+"3917":"Vacant","21280":"Urban","18614":"Vacant","7808":"Vacant","23502":"Urban","8443":"Vacant",
+"26780":"Urban","13033":"Vacant","24777":"Vacant","19596":"Urban","9461":"Vacant","19918":"Urban",
+"12577":"Vacant","15902":"Urban","15576":"Urban","16896":"Urban","10385":"Vacant","24895":"Urban",
+"24288":"Vacant","13938":"Urban","12282":"Vacant","11230":"Vacant","11843":"Urban","25685":"Vacant",
+"6071":"Vacant","3017":"Vacant","13041":"Other","27486":"Urban"
+}

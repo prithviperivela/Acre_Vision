@@ -1,7 +1,11 @@
+# raw rasters and chips -- 7.3 GB, regenerate with pipeline/01_chip.py and 08_chip64.py
+*.npy
+*.tif
+# trained weights -- 54.8 MB per seed; see README for retraining
+*.pt
+# third-party imagery: Esri World Imagery is fetched for research, not redistributed
+label_images/
+_tiles/
 __pycache__/
 *.pyc
-.env
-*.egg-info/
-dist/
-build/
-.DS_Store
+.ipynb_checkpoints/

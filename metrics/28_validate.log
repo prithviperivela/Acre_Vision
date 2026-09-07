@@ -1,0 +1,32 @@
+
+=== GOLD BATCH 1 -- the v7 gate was FITTED here, so this is optimistic  (n=94) ===
+ver    Vacant prec  Vacant rec  Vacant F1  accuracy   errors on Vacant
+v4           35.3%       15.0%      21.1     43.6%   {'Other': 11}
+v5           58.1%       90.0%      70.6     64.9%   {'Other': 14, 'Urban': 12}
+v6           68.0%       85.0%      75.6     73.4%   {'Urban': 12, 'Other': 4}
+v7           68.8%       82.5%      75.0     73.4%   {'Urban': 11, 'Other': 4}
+
+=== GOLD BATCH 2 -- never used for fitting: THE HONEST TEST  (n=100) ===
+ver    Vacant prec  Vacant rec  Vacant F1  accuracy   errors on Vacant
+v4           50.0%       13.5%      21.2     39.0%   {'Other': 7}
+v5           52.7%       55.8%      54.2     50.0%   {'Urban': 13, 'Other': 11, 'Water': 2}
+v6           55.6%       48.1%      51.5     52.0%   {'Urban': 13, 'Other': 5, 'Water': 2}
+v7           54.8%       44.2%      48.9     51.0%   {'Urban': 12, 'Other': 5, 'Water': 2}
+
+=== BATCH 2, interstitial stratum only (what the gate targets)  (n=40) ===
+ver    Vacant prec  Vacant rec  Vacant F1  accuracy   errors on Vacant
+v4            0.0%        0.0%       0.0     27.5%   none
+v5           52.5%      100.0%      68.9     52.5%   {'Urban': 13, 'Other': 4, 'Water': 2}
+v6           52.5%      100.0%      68.9     52.5%   {'Urban': 13, 'Other': 4, 'Water': 2}
+v7           52.6%       95.2%      67.8     52.5%   {'Urban': 12, 'Other': 4, 'Water': 2}
+
+=== UNLABELLED parcels -- never measured before (n=24) ===
+OSM assigns these no label at all, so no label rule can be scored on them.
+What is actually there, by verified imagery:
+  Vacant    22  (92%)
+  Urban      2  (8%)
+
+=== v6 -> v7 on batch 2 ===
+  Vacant F1 51.5 -> 48.9  (-2.6)
+  Vacant precision 55.6% -> 54.8%
+  accuracy 52.0% -> 51.0%

@@ -1,0 +1,13 @@
+{
+"_note": "BATCH 3. Sampled ONLY from land the v8 rural-open rule newly claims as Vacant and v6 did not, so its Vacant precision is measured directly. Blind to the OSM mask, shuffled, no overlap with batches 1-2. Annotator: Claude (model). Same class rule as batches 1-2.",
+"16095":"Vacant","11626":"Vacant","6209":"Vacant","3046":"Vacant","1389":"Vacant","7354":"Vacant",
+"21020":"Vacant","3223":"Vacant","6244":"Vacant","10881":"Vacant","735":"Vacant","7142":"Vacant",
+"21046":"Vacant","9217":"Vacant","15044":"Urban","2632":"Vacant","14910":"Vacant","19690":"Other",
+"5871":"Vacant","28663":"Other","18632":"Vacant","2742":"Vacant","25484":"Vacant","1512":"Vacant",
+"25642":"Vacant","7765":"Vacant","8083":"Vacant","22053":"Urban","25749":"Vacant","668":"Vacant",
+"30057":"Vacant","14885":"Vacant","30060":"Vacant","29622":"Vacant","14623":"Vacant","30573":"Vacant",
+"25506":"Vacant","25009":"Vacant","2168":"Vacant","28306":"Vacant","852":"Vacant","3853":"Vacant",
+"11191":"Vacant","26225":"Water","8386":"Vacant","8950":"Vacant","23816":"Vacant","28884":"Vacant",
+"6780":"Vacant","5548":"Vacant","14287":"Vacant","19075":"Urban","24796":"Vacant","4952":"Vacant",
+"5846":"Vacant","185":"Vacant","27138":"Vacant","14008":"Vacant","12372":"Vacant","7093":"Vacant"
+}

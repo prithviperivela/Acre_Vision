@@ -1,0 +1,18 @@
+{
+  "aoi_pct": {
+    "Vacant": 3.44,
+    "Urban": 20.2,
+    "Water": 2.81,
+    "Other": 4.56,
+    "ignore": 68.99
+  },
+  "vacant_km2_landuse": 21.3259,
+  "vacant_km2_interstitial": 84.92620000000001,
+  "chips_ge25_v4": 10716,
+  "chips_ge25_v5": 11851,
+  "vacant_px_v4": 627728,
+  "vacant_px_v5": 1007798,
+  "ring_k": 40,
+  "ring_t": 0.4,
+  "local_t": 0.005
+}

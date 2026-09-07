@@ -1,0 +1,10 @@
+{
+  "river_pct_aoi": 7.443255075780721,
+  "inst_pct_aoi": 5.476742801219948,
+  "constrained_pct_aoi": 12.591541401075999,
+  "top100_blocked": 19.0,
+  "top25_blocked": 20.0,
+  "all_blocked": 18.099011242042533,
+  "parcel_side_m": 320.0,
+  "parcel_acres": 25.303568692764266
+}

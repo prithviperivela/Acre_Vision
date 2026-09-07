@@ -6,8 +6,26 @@ import pandas as pd
 
 # ── Load data ────────────────────────────────────────────────
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "6slider_parcel_scores.csv")
+FLAG_PATH = os.path.join(os.path.dirname(__file__), "data", "developability_flags.csv")
 dashboard_df = pd.read_csv(DATA_PATH)
-print(f"📊 Loaded {len(dashboard_df)} parcels for dashboard")
+
+# The vacancy subscore in this file comes from the v8 model, which is supervised by
+# OpenStreetMap vectors and validated against 0.57 m/px imagery on 254 parcels.
+# The original spectral-threshold score is kept as vacancy_subscore_v1 for comparison.
+#
+# developability_flags marks parcels that are genuinely open but not acquirable:
+# river/stream corridor (floodplain, usually government land) and institutional
+# curtilage (college, hospital, military grounds). Manual review of the ranked
+# output found both over-represented in the top 25 relative to their share of the
+# city, so the filter below is on by default.
+if os.path.exists(FLAG_PATH):
+    _flags = pd.read_csv(FLAG_PATH)[["gid", "blocked"]]
+    dashboard_df = dashboard_df.merge(_flags, on="gid", how="left")
+    dashboard_df["blocked"] = dashboard_df["blocked"].fillna(False).astype(bool)
+else:
+    dashboard_df["blocked"] = False
+print(f"📊 Loaded {len(dashboard_df)} parcels "
+      f"({int(dashboard_df['blocked'].sum())} flagged non-developable)")
 
 # ── Create the Dash app ─────────────────────────────────────
 app = dash.Dash(__name__)
@@ -387,6 +405,23 @@ app.layout = html.Div(className='main-container', children=[
                 ),
             ]),
 
+            # Developability filter
+            html.Div(className='slider-group', children=[
+                html.Label('Developability filter', className='slider-label'),
+                dcc.Checklist(
+                    id='dev-filter',
+                    options=[{'label': '  Exclude river corridor & institutional land',
+                              'value': 'on'}],
+                    value=['on'],
+                    style={'fontSize': '13px', 'marginTop': '6px'}
+                ),
+                html.P('Open land that cannot be acquired: Musi floodplain and the '
+                       'grounds of colleges, hospitals and military compounds. '
+                       'These are 12.6% of the city but 20% of the unfiltered top 25.',
+                       style={'fontSize': '11.5px', 'color': '#6b7280',
+                              'marginTop': '6px', 'lineHeight': '1.45'})
+            ]),
+
             # Weight Summary
             html.Div(id='weight-summary', className='weight-summary')
         ]),
@@ -417,9 +452,11 @@ app.layout = html.Div(className='main-container', children=[
      Input('healthcare-weight', 'value'),
      Input('education-weight', 'value'),
      Input('lifestyle-weight', 'value'),
-     Input('essential-weight', 'value')]
+     Input('essential-weight', 'value'),
+     Input('dev-filter', 'value')]
 )
-def update_dashboard(vacancy_w, road_w, healthcare_w, education_w, lifestyle_w, essential_w):
+def update_dashboard(vacancy_w, road_w, healthcare_w, education_w, lifestyle_w,
+                     essential_w, dev_filter):
     # Normalize weights to sum to 100%
     total = vacancy_w + road_w + healthcare_w + education_w + lifestyle_w + essential_w
     if total == 0:
@@ -446,7 +483,9 @@ def update_dashboard(vacancy_w, road_w, healthcare_w, education_w, lifestyle_w, 
     ) * 100
 
     # Get top 10 parcels
-    top_10 = dashboard_df.nlargest(10, 'composite_score_dynamic')
+    _pool = (dashboard_df[~dashboard_df['blocked']]
+             if dev_filter and 'on' in dev_filter else dashboard_df)
+    top_10 = _pool.nlargest(10, 'composite_score_dynamic')
 
     # Weight summary
     weight_summary = html.Div([
